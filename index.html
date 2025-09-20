@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Logsfromthestack — Season 1: Coming Soon</title>
+  <meta name="description" content="An editorial-style teaser for Logsfromthestack. Join the list to get Season 1 the moment it drops." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Newsreader:opsz,wght@6..72,400;6..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.png" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="masthead">
+    <div class="container masthead-inner">
+      <div class="nameplate">
+        <span class="kicker">A new tech chronicle</span>
+        <h1 class="logotype">Logsfromthestack</h1>
+      </div>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+
+      <nav id="primary-nav" class="site-nav" aria-label="Primary">
+        <a href="#prologue" class="nav-link">Prologue</a>
+        <a href="#teasers" class="nav-link">Teasers</a>
+        <a href="#dispatch" class="nav-link accent">Get the Dispatch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Cover Story -->
+    <section class="cover" aria-label="Cover">
+      <figure class="cover-art">
+        <!-- You can swap to header-01/02/03.jpg if you prefer -->
+        <img src="assets/header-02.jpg" alt="Logsfromthestack editorial cover" />
+        <figcaption class="caption">Season 1, Issue 0 — the calm before the deploy.</figcaption>
+      </figure>
+
+      <div class="container cover-copy">
+        <p class="eyebrow">Issue 0 · Season 1 Teaser</p>
+        <h2 class="hed">The Night Before the Push</h2>
+        <p class="dek">
+          Meet <strong>ANUJA</strong> a fresh Data Science grad turned Data Engineering Intern and follow her journey from anxious inbox-refreshing to that unforgettable first call with her dream company.
+        </p>
+        
+        <form id="subscribeForm" class="subscribe-form" novalidate>
+          <label class="sr-only" for="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" />
+          <label class="sr-only" for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="Email address" autocomplete="email" inputmode="email" required />
+          <button class="btn" type="submit">Send me the first issue</button>
+          <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Prologue -->
+    <section id="prologue" class="container prologue">
+      <article class="essay hoverable">
+        <header class="essay-head">
+          <h3 class="rubric">Prologue</h3>
+          <h2 class="title">The Night Before the Push</h2>
+          <p class="lede dropcap">
+            The city dims. Dashboards hum. Someone's about to hit deploy—dry jokes, empty snacks, and the breath right before impact.
+          </p>
+          <blockquote class="pullquote">“We built it. It broke. We learned. Now we tell it.”</blockquote>
+          <p>
+            No press releases. No AI vapor. Just decisions, tradeoffs, and what actually ships.
+          </p>
+          
+        <a href="#dispatch" class="readon">Get the dispatch →</a>
+      </article>
+    </section>
+
+    <!-- Teasers -->
+    <section id="teasers" class="container teasers">
+      <h2 class="section-hed">Season 1: Teasers</h2>
+      <div class="teaser-grid">
+        <article class="teaser-card hoverable">
+          <img src="assets/anuja.jpg" alt="Anuja portrait" />
+          <div class="card-copy">
+            <h3>Call from HR</h3>
+            <p>Another “Thanks for applying, but…” — or the call that changes everything for Anuja? </p>            
+          </div>
+        </article>
+        <article class="teaser-card hoverable">
+          <img src="assets/sola.jpg" alt="Sola portrait" />
+          <div class="card-copy">
+            <h3>SOLA — “The vibe of the party”</h3>
+            <p>Alerts become rhythm, postmortems become lessons. Less panic, more flow; shipping stays fun.</p>
+          </div>
+        </article>
+        <article class="teaser-card hoverable">
+          <img src="assets/bob.jpg" alt="Bob portrait" />
+          <div class="card-copy">
+            <h3>BOB - “The Phoenix 101 Project ” - What broke?</h3>
+            <p> Foreign wealthy investor wants consolidated data from his farm's automated irrigation and manure-application systems. How will the team ingest, validate, store, and visualize it?</p>
+          </div>
+        </article>
+        <article class="teaser-card hoverable">
+          <img src="assets/gang.jpg" alt="Team group" />
+          <div class="card-copy">
+            <h3>THE GANG — “Cheers to Week One”</h3>
+            <p> "It's Fridaaay" First Friday Fun Outing with the Gang. Anuja meets other teammates.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Newsletter kicker -->
+    <section id="dispatch" class="dispatch">
+      <div class="container dispatch-inner hoverable">
+        <h2>Get the first issue by email</h2>
+        <p>No spam, unsubscribe anytime. We'll send Season 1 the moment it lands.</p>
+        <form class="subscribe-form-inline" aria-label="Subscribe form duplicate">
+          <input type="text" placeholder="Your name" />
+          <input type="email" placeholder="Email address" required />
+          <button type="button" class="btn" data-inline-submit>Join the list</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Logsfromthestack — All rights reserved.</p>
+      <a href="#top" class="toplink">Back to top</a>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js" defer></script>
+</body>
+</html>

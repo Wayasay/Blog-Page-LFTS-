@@ -1,0 +1,191 @@
+/* Editorial theme for Logsfromthestack — fully responsive */
+:root{
+  --paper: #f6f5f1;
+  --ink: #1a1a1a;
+  --soft-ink: #3a3a3a;
+  --accent: #b44b28;
+  --accent-ink: #5c2414;
+  --line: rgba(0,0,0,0.08);
+  --radius: 14px;
+  --shadow: 0 8px 24px rgba(0,0,0,0.08);
+
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 14px;
+  --space-4: 18px;
+  --space-5: 24px;
+  --space-6: 32px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:
+    radial-gradient(800px 400px at 10% -10%, rgba(180,75,40,0.04), transparent 60%),
+    radial-gradient(700px 380px at 120% 0%, rgba(0,0,0,0.04), transparent 60%),
+    var(--paper);
+  color:var(--ink);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  line-height:1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: env(safe-area-inset-top);
+}
+
+.container{max-width:min(100vw - 32px, 960px); margin:0 auto; padding:0 16px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden}
+.skip:focus{left:16px; top:12px; width:auto; height:auto; background:#000; color:#fff; padding:6px 10px; border-radius:8px; z-index:1000}
+
+/* Masthead */
+.masthead{
+  border-bottom:1px solid var(--line);
+  background: rgba(255,255,255,0.7);
+  position:sticky; top:0; backdrop-filter: blur(8px);
+}
+.masthead-inner{display:flex; align-items:center; justify-content:space-between; padding:var(--space-4) 0}
+.nameplate .kicker{display:block; letter-spacing:.12em; text-transform:uppercase; font-size:12px; color:var(--soft-ink)}
+.logotype{
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+  font-weight:700; font-size: clamp(24px, 4.6vw, 42px); margin:2px 0 0;
+  letter-spacing:.5px;
+}
+
+/* Navigation */
+.menu-toggle{
+  display:none; background:transparent; border:0; padding:10px; margin-left:auto; cursor:pointer;
+  border-radius:10px;
+}
+.menu-toggle:focus{outline:2px solid var(--accent)}
+
+.menu-toggle .bar{
+  display:block; width:22px; height:2px; background:#333; margin:4px 0; border-radius:2px;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.site-nav{display:flex; gap:var(--space-3)}
+.nav-link{color:var(--soft-ink); text-decoration:none; padding:8px 10px; border-radius:10px; transition:background .15s ease}
+.nav-link:hover{background:rgba(0,0,0,0.05)}
+.nav-link.accent{color:#fff; background:var(--accent)}
+.nav-link.accent:hover{background:#a34323}
+
+/* Cover */
+.cover-art{margin:0}
+.cover-art img{
+  width:100%; height:clamp(40vh, 54vh, 64vh); min-height:280px;
+  object-fit:cover; object-position:center 35%;
+  border-bottom:1px solid var(--line)
+}
+.caption{font-size:12px; color:var(--soft-ink); padding:6px 16px 0}
+.cover-copy{padding:var(--space-4) 0 var(--space-6)}
+.eyebrow{letter-spacing:.12em; text-transform:uppercase; font-size:12px; color:var(--soft-ink)}
+.hed{
+  font-family: 'Newsreader', Georgia, serif; font-weight:700;
+  font-size: clamp(26px, 6vw, 56px); line-height:1.15; margin:6px 0 10px;
+}
+.dek{font-size:clamp(16px, 2.6vw, 18px); color:#333; max-width:68ch}
+
+/* Forms */
+.subscribe-form{
+  display:grid; grid-template-columns: 1fr 1fr auto; gap:var(--space-2); margin-top:var(--space-3)
+}
+.subscribe-form input{
+  border:1px solid var(--line); background:#fff; padding:14px 12px; border-radius:10px; min-width:0;
+}
+.btn{
+  border:1px solid var(--accent-ink); background:var(--accent); color:#fff; padding:14px 16px; border-radius:10px;
+  cursor:pointer; transition: transform .18s ease, filter .18s ease;
+  font-weight:600;
+}
+.btn:hover{transform: translateY(-1px); filter:brightness(1.02)}
+.form-message{margin-top:6px; font-weight:600}
+
+/* Prologue */
+.prologue{padding:var(--space-5) 0 var(--space-3)}
+.essay{
+  background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:var(--space-4); box-shadow:var(--shadow)
+}
+.essay-head .rubric{margin:0; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--soft-ink)}
+.essay-head .title{
+  margin:6px 0 10px; font-family:'Newsreader', Georgia, serif; font-size:clamp(22px, 4.4vw, 28px); line-height:1.2
+}
+.lede{font-size:clamp(16px, 2.6vw, 18px); color:#212121}
+.dropcap::first-letter{
+  float:left; font-family:'Newsreader', Georgia, serif; font-size:64px; line-height:0.8; padding:6px 10px 0 0; color:var(--accent)
+}
+.pullquote{
+  font-family:'Newsreader', Georgia, serif; font-size:clamp(18px, 3.2vw, 22px); line-height:1.35; margin:var(--space-3) 0; padding:12px 16px; background: #fff6f2; border-left:4px solid var(--accent)
+}
+.readon{color:var(--accent-ink); text-decoration:none; font-weight:600}
+.readon:hover{text-decoration:underline}
+
+/* Teasers */
+.teasers{padding:var(--space-4) 0 var(--space-6)}
+.section-hed{font-family:'Newsreader', Georgia, serif; font-size:clamp(18px, 3.4vw, 22px); margin:0 0 var(--space-3)}
+.teaser-grid{display:grid; grid-template-columns: repeat(2, 1fr); gap:var(--space-3)}
+.teaser-card{background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:var(--shadow)}
+.teaser-card img{width:100%; height:220px; object-fit:cover}
+.card-copy{padding:var(--space-3)}
+.card-copy h3{margin:0 0 6px; font-size:clamp(16px, 3.4vw, 18px)}
+.card-copy p{margin:0; color:#444}
+
+/* Dispatch */
+.dispatch{background: linear-gradient(180deg, rgba(0,0,0,0.02), transparent), var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+.dispatch-inner{max-width:860px; margin:0 auto; padding:var(--space-5) 16px; text-align:center; background:#fff; border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow)}
+.subscribe-form-inline{display:flex; gap:var(--space-2); justify-content:center; flex-wrap:wrap; margin-top:var(--space-2)}
+.subscribe-form-inline input{border:1px solid var(--line); background:#fff; padding:12px; border-radius:10px; min-width:240px}
+
+/* Footer */
+.footer{padding:var(--space-5) 0}
+.footer-inner{display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:var(--space-3); gap:12px}
+.toplink{color:var(--soft-ink); text-decoration:none}
+.toplink:hover{text-decoration:underline}
+
+/* Hover treatment */
+.hoverable{transition: transform .18s ease, box-shadow .18s ease}
+.hoverable:hover{transform: translateY(-2px)}
+
+/* Toast */
+.toast{
+  position:fixed; left:50%; bottom:24px; transform:translateX(-50%) translateY(20px);
+  background:#222; color:#fff; padding:10px 14px; border-radius:10px; opacity:0; pointer-events:none; transition: transform .25s ease, opacity .25s ease
+}
+.toast.show{opacity:1; transform:translateX(-50%) translateY(0)}
+
+/* ---------- Breakpoints ---------- */
+
+/* Laptops / medium */
+@media (max-width: 1024px){
+  .subscribe-form{grid-template-columns: 1fr 1fr; }
+  .subscribe-form button{grid-column: 1 / -1;}
+}
+
+/* Tablets */
+@media (max-width: 860px){
+  .teaser-grid{grid-template-columns: 1fr}
+}
+
+/* Mobile */
+@media (max-width: 720px){
+  .masthead-inner{gap:10px}
+  .menu-toggle{display:inline-flex}
+  .site-nav{
+    position:absolute; top:64px; right:16px; left:16px;
+    display:flex; flex-direction:column; gap:8px; padding:10px;
+    background:#fff; border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow);
+    transform-origin: top right; transform: scale(0.98) translateY(-6px); opacity:0; pointer-events:none;
+    transition: transform .18s ease, opacity .18s ease;
+  }
+  .site-nav.open{transform: scale(1) translateY(0); opacity:1; pointer-events:auto}
+  .nav-link{padding:12px 12px}
+
+  .subscribe-form{grid-template-columns: 1fr; }
+  .dropcap::first-letter{float:none; font-size:1em; padding:0} /* disable dropcap on very small screens */
+  .footer-inner{flex-direction:column; align-items:flex-start}
+}
+
+/* Very small phones */
+@media (max-width: 420px){
+  .container{padding:0 12px}
+  .subscribe-form-inline input{min-width:0; width:100%}
+}
